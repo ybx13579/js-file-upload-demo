@@ -4,17 +4,17 @@ js/web  文件上传完整demo
 > **如有帮助谢谢star**   :star::star::star::star::star: 
  
  
- - 效果预览图：
+### 效果预览图：
  
  <img src="show/1.jpg" >
  
  
- - 简要教程
+### 简要教程
  
 ssi-uploader是一款带预览图并且可以拖拽文件的jQuery ajax文件上传插件。该文件上传插件支持AJAX，支持多文件上传，可控制上的文件格式和文件大小，提供各种回调函数，使用非常方便。
 
-
- - 使用方法
+ 
+### 使用方法
  
 在页面中引入ssi-uploader.css和ssi-uploader.js文件。
  
@@ -22,22 +22,22 @@ ssi-uploader是一款带预览图并且可以拖拽文件的jQuery ajax文件上
 
 > <script src="path/to/ssi-uploader.js"></script>  
 
-
- - HTML结构
+ 
+### HTML结构
 
 最基本的文件上传HTML结构是使用一个<input>元素，类型为file，并指定一个id。
 
 > <input type="file" multiple id="ssi-upload"/>
-
- -  初始化插件
+ 
+###  初始化插件
 
 在页面DOM元素加载完毕之后，可以通过ssi_uploader方法来初始化该文件上传插件。
 
 > $('#ssi-upload').ssi_uploader({
     url: 'path/to/upload.php'
 });   
-
- -  配置参数
+ 
+### 配置参数
  
  ssi_uploader文件上传插件的可用配置参数如下：
  
@@ -152,71 +152,91 @@ responseValidation对象的可用属性有：
 
 > error：类型{String}，设置错误信息。
  
-###例如：
+### 例如：
 
 
-    //structure 1
-  
-    $('#ss-uploader').ssi_uploader({
-  
-    responseValidation:{
-    
-      validationKey: 'type',
-      
-      resultKey: 'data',
-      
-      success: 'success',
-      
-      error: 'error'
-      
+    //structure 1 
+    $('#ss-uploader').ssi_uploader({ 
+    responseValidation:{   
+      validationKey: 'type',    
+      resultKey: 'data',      
+      success: 'success',     
+      error: 'error'      
     }
-
-    });
- 
+    }); 
     //result
-     /*
-   
-    {
-    
-      type:'error',
-      
-      data:'Already Exists.'
-      
+    /*   
+    {    
+      type:'error',      
+      data:'Already Exists.'      
     } 
-
-    */
- 
-    //structure 2
-  
-    $('#ss-uploader').ssi_uploader({
-  
-    responseValidation:{
-    
-      validationKey: {
-      
-      
-        success: 'success',
-        
-        error: 'error'
-        
-        
-      },
-      
+    */ 
+    //structure 2  
+    $('#ss-uploader').ssi_uploader({  
+    responseValidation:{    
+      validationKey: {           
+        success: 'success',        
+        error: 'error'               
+      },      
       resultKey: 'validationKey'
-      
     }
-    
-  })
-  
+    })
     //result
      /*
       {
-    
-      error:'Already Exists.'
-      
+      error:'Already Exists.'      
     } 
     */
+ 
+### 回调函数
+ 
+> ssi-uploader文件生成插件支持4种回调函数：beforeUpload、beforeEachUpload、onUpload和onEachUpload
 
+
+ - beforeUpload
+
+> beforeUpload回调函数在文件上传前执行的回调函数。
+
+        $('input').ssi_uploader({url:'uploadAction.php',beforeUpload:function(){
+            console.log('文件上传准备就绪！');
+        }})
+
+        $('input').on('beforeUpload.ssi-uploader',function(){console.log('一个文件准备上传。')});
+  - beforeEachUpload
+
+> beforeEachUpload回调函数在每一个单独的文件上传前执行的回调函数。该函数访问每个文件的信息和xhr对象。如果终止了某个文件，你可以设置一个字符串，提示取消的原因，并显示的错误信息中。
+
+        $('input').ssi_uploader({url:'uploadAction.php',beforeEachUpload:function(fileInfo,xhr){
+            console.log(fileInfo.name+' '+fileInfo.type+' '+fileInfo.size);
+            if(fileInfo.size > 1){ xhr.abort(); }
+                return '文件尺寸太大！';
+        }});
+
+        $('input').on('beforeEachUpload.ssi-uploader',function(){console.log('A file is going for uploading.')});
+ - onUpload
+
+> beforeUpload回调函数在文件上传后执行的回调函数。
+
+    $('input').ssi_uploader({url:'uploadAction.php',onUpload:function(){
+            console.log('文件上传完毕！');
+        }})
+
+        $('input').on('onUpload.ssi-uploader',function(){console.log('文件上传完毕！')});
+ - onEachUpload
+
+> beforeUpload回调函数在每一个单独的文件上传后执行的回调函数。
+
+        $('input').ssi_uploader({url:'uploadAction.php',onEachUpload:function(fileInfo){
+            console.log(fileInfo.uploadStatus+' 'fileInfo.name+' '+fileInfo.type+' '+fileInfo.size+' '+fileInfo.uploadStatus);
+        }});
+
+        $('input').on('onEachUpload.ssi-uploader',function(){console.log('A file uploaded.')});  
+
+
+
+
+
+ssi-uploader文件上传插件的原地址为：https://github.com/ssbeefeater/ssi-uploader。
 
 
 
