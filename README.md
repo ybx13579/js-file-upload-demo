@@ -144,8 +144,11 @@ $('#ssi-upload').ssi_uploader({
 responseValidation对象的可用属性有：
 
 > validationKey：类型{String||Object}，设置验证信息。
+
 > resultKey：类型{String||Object}，设置返回验证信息。
+
 > success：类型{String}，设置成功信息。
+
 > error：类型{String}，设置错误信息。
 
 
