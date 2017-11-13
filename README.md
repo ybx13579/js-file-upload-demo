@@ -155,9 +155,9 @@ responseValidation对象的可用属性有：
 ###例如：
 
 
-  //structure 1
+    //structure 1
   
-  $('#ss-uploader').ssi_uploader({
+    $('#ss-uploader').ssi_uploader({
   
     responseValidation:{
     
@@ -170,11 +170,11 @@ responseValidation对象的可用属性有：
       error: 'error'
       
     }
-    
-  });
+
+    });
  
-  //result
-   /*
+    //result
+     /*
    
     {
     
@@ -183,12 +183,12 @@ responseValidation对象的可用属性有：
       data:'Already Exists.'
       
     } 
-    
-  */
+
+    */
  
-  //structure 2
+    //structure 2
   
-  $('#ss-uploader').ssi_uploader({
+    $('#ss-uploader').ssi_uploader({
   
     responseValidation:{
     
@@ -208,14 +208,14 @@ responseValidation对象的可用属性有：
     
   })
   
-  //result
-   /*
-    {
+    //result
+     /*
+      {
     
       error:'Already Exists.'
       
     } 
-  */
+    */
 
 
 
