@@ -40,7 +40,113 @@ $('#ssi-upload').ssi_uploader({
  
  ssi_uploader文件上传插件的可用配置参数如下：
  
+<table>
+    <thead>
+      <tr>
+        <td>参数</td>
+        <td>类型</td>
+        <td>默认值</td>
+        <td>描述</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>url</td>
+        <td>{String}</td>
+        <td>null</td>
+        <td>接收ajax请求的地址。必须填写。</td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td>{Object}</td>
+        <td>null</td>
+        <td>发送请求的额外数据。例如<code>$('input').ssi-uploader({url:'upload.php',data:{"name":"myDragon"}})</code></td>
+      </tr>
+      <tr>
+        <td>ajaxOptions</td>
+        <td>{Object}</td>
+        <td>{type:'DELETE'}</td>
+        <td>扩展默认的<code>$.ajax</code>函数的选项。</td>
+      </tr>
+      <tr>
+        <td>locale</td>
+        <td>{String}</td>
+        <td>"en"</td>
+        <td>使用的本地化语言。</td>
+      </tr>
+      <tr>
+        <td>preview</td>
+        <td>{boolean}</td>
+        <td>true</td>
+        <td>是否启用文件预览图效果。</td>
+      </tr>
+      <tr>
+        <td>maxNumberOfFiles</td>
+        <td>{Number}</td>
+        <td>null</td>
+        <td>每次允许上传多少个文件。</td>
+      </tr>
+      <tr>
+        <td>maxFileSize</td>
+        <td>{Number}</td>
+        <td>null</td>
+        <td>允许上传的最大文件尺寸。</td>
+      </tr>
+      <tr>
+        <td>allowed</td>
+        <td>{Array}</td>
+        <td>['jpg', 'jpeg', 'png', 'bmp', 'gif']</td>
+        <td>允许上传的文件类型。</td>
+      </tr>
+      <tr>
+        <td>errorHandler</td>
+        <td>{Object}</td>
+        <td></td>
+        <td>用于处理错误信息的方法。</td>
+      </tr>
+      <tr>
+        <td>beforeUpload</td>
+        <td>{Function}</td>
+        <td></td>
+        <td>文件上传前执行的回调函数。</td>
+      </tr>
+      <tr>
+        <td>beforeEachUpload</td>
+        <td>{Function}</td>
+        <td></td>
+        <td>每一个单独的文件上传前执行的回调函数。</td>
+      </tr>
+      <tr>
+        <td>onUpload</td>
+        <td>{Function}</td>
+        <td></td>
+        <td>文件上传后执行的回调函数。</td>
+      </tr>
+      <tr>
+        <td>onEachUpload</td>
+        <td>{Function}</td>
+        <td></td>
+        <td>每一个单独的文件上传后执行的回调函数。</td>
+      </tr>
+      <tr>
+        <td>responseValidation</td>
+        <td>{Object||false}</td>
+        <td></td>
+        <td>设置错误校验，插件将显示设置的信息。可以可以是：<code>{ type:"error",result:"Already exists" }</code>或<code>{ error:"Already exists." }</code>。</td>
+      </tr>
+    </tbody>
+  </table>
+  
+其中，errorHandler参数带有一个errorHandler.method函数，该函数错误信息和类型。
+  
+ > function(msg,type){alert(msg);}  
+  
+responseValidation对象的可用属性有：
 
+> validationKey：类型{String||Object}，设置验证信息。
+> resultKey：类型{String||Object}，设置返回验证信息。
+> success：类型{String}，设置成功信息。
+> error：类型{String}，设置错误信息。
 
 
 
