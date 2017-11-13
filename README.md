@@ -154,16 +154,16 @@ responseValidation对象的可用属性有：
 
 例如：
 
-`
-//structure 1
-$('#ss-uploader').ssi_uploader({
-  responseValidation:{
-    validationKey: 'type',
-    resultKey: 'data',
-    success: 'success',
-    error: 'error'
-  }
-});
+
+  //structure 1
+  $('#ss-uploader').ssi_uploader({
+    responseValidation:{
+      validationKey: 'type',
+      resultKey: 'data',
+      success: 'success',
+      error: 'error'
+    }
+  });
  
 //result
  /*
