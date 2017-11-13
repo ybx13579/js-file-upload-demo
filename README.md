@@ -154,7 +154,7 @@ responseValidation对象的可用属性有：
 
 例如：
 
-<code>
+
 //structure 1
 $('#ss-uploader').ssi_uploader({
   responseValidation:{
@@ -189,7 +189,7 @@ $('#ss-uploader').ssi_uploader({
     error:'Already Exists.'
   } 
 */
-</code>
+
 
 
 
