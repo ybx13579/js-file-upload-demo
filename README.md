@@ -156,37 +156,64 @@ responseValidation对象的可用属性有：
 
 
   //structure 1
+  
   $('#ss-uploader').ssi_uploader({
+  
     responseValidation:{
+    
       validationKey: 'type',
+      
       resultKey: 'data',
+      
       success: 'success',
+      
       error: 'error'
+      
     }
+    
   });
  
   //result
    /*
+   
     {
+    
       type:'error',
+      
       data:'Already Exists.'
+      
     } 
+    
   */
  
   //structure 2
+  
   $('#ss-uploader').ssi_uploader({
+  
     responseValidation:{
+    
       validationKey: {
+      
+      
         success: 'success',
+        
         error: 'error'
+        
+        
       },
+      
       resultKey: 'validationKey'
+      
     }
+    
   })
+  
   //result
    /*
     {
+    
       error:'Already Exists.'
+      
     } 
   */
 
