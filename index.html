@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可拖拽和带预览图的jQuery文件上传插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+    <link rel="stylesheet" href="css/ssi-uploader.css" />
+    <!--[if IE]>
+        <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <input type="file" multiple id="ssi-upload3" />
+
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/ssi-uploader.js"></script>
+    <script type="text/javascript">
+        //文件上传 下载地址：http://www.htmleaf.com/jQuery/Form/201607033680.html
+        $('#ssi-upload3').ssi_uploader({
+            url: '#',
+            dropZone: false,
+            maxFileSize: 8,
+            allowed: ['jpg', 'gif', 'txt', 'png', 'pdf'],
+        });
+    </script>
+</body>
+</html>
