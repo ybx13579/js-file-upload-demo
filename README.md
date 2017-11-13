@@ -151,8 +151,8 @@ responseValidation对象的可用属性有：
 > success：类型{String}，设置成功信息。
 
 > error：类型{String}，设置错误信息。
-
-例如：
+ 
+###例如：
 
 
   //structure 1
@@ -165,31 +165,31 @@ responseValidation对象的可用属性有：
     }
   });
  
-//result
- /*
-  {
-    type:'error',
-    data:'Already Exists.'
-  } 
-*/
+  //result
+   /*
+    {
+      type:'error',
+      data:'Already Exists.'
+    } 
+  */
  
-//structure 2
-$('#ss-uploader').ssi_uploader({
-  responseValidation:{
-    validationKey: {
-      success: 'success',
-      error: 'error'
-    },
-    resultKey: 'validationKey'
-  }
-})
-//result
- /*
-  {
-    error:'Already Exists.'
-  } 
-*/
-`
+  //structure 2
+  $('#ss-uploader').ssi_uploader({
+    responseValidation:{
+      validationKey: {
+        success: 'success',
+        error: 'error'
+      },
+      resultKey: 'validationKey'
+    }
+  })
+  //result
+   /*
+    {
+      error:'Already Exists.'
+    } 
+  */
+
 
 
 
