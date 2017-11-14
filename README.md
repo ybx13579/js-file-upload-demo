@@ -236,7 +236,7 @@ responseValidation对象的可用属性有：
 
 
 
-ssi-uploader文件上传插件的原地址为：https://github.com/ssbeefeater/ssi-uploader。
+> ssi-uploader文件上传插件的原地址为：https://github.com/ssbeefeater/ssi-uploader。
 
 
 
